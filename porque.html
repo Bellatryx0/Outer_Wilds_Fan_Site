@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Outer Wilds - Por quê?</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Special+Gothic+Expanded+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1><img src="Outer_Wilds_Logo.png" alt="Outer Wilds Logo"></h1>
+    <h2>Por que é uma obra de arte?</h2>
+    
+    <div class="content-alt">
+        <div class="alt-grid">
+            <div class="alt-text">
+                <p class="alt-intro">Alguns jogos são feitos para serem zerados. Outer Wilds foi feito para ser <span class="highlight">descoberto</span>.</p>
+                
+                <div class="alt-points">
+                    <div class="alt-point">
+                        <span class="alt-icon">🎵</span>
+                        <div>
+                            <h4>Trilha sonora</h4>
+                            <p>A música de Andrew Prahlow captura solidão e esperança perante o universo. Cada trilha consegue te contar a história por trás de cada monumento.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="alt-point">
+                        <span class="alt-icon">📖</span>
+                        <div>
+                            <h4>Narrativa não-linear</h4>
+                            <p>Você encontra a história em pedaços, fora de ordem, você é um arqueólogo espacial. Cada descoberta muda sua interpretação de tudo que veio antes.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="alt-point">
+                        <span class="alt-icon">🥹</span>
+                        <div>
+                            <h4>O final</h4>
+                            <p>Uma única escolha, e o momento onde é bom entender, que algumas coisas são maiores que você. E que no fim, vale mais apena descansar... e cheirar os pinheiros pelo caminho.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="alt-point">
+                        <span class="alt-icon">🌌</span>
+                        <div>
+                            <h4>Tá... mas?</h4>
+                            <p>Eu não consigo por em tão poucas palavras o por quê esse jogo é assim. Qualquer pedaço de informação dita poderá estragar uma futura experiência, então tudo que eu posso dizer é que Outer Wilds é uma obra de arte.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="alt-image">
+                <img src="Solar_system_map.webp" alt="Solar system">
+                <p class="alt-caption">"O fim é apenas um novo começo."</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <a href="index.html" class="contatos-link">voltar</a>
+    </div>
+    
+    <button id="musicBtn" class="music-button">♫</button>
+    <audio id="bgMusic" loop>
+        <source src="Travelers_Andrew_Prahlow.mp3" type="audio/mpeg">
+    </audio>
+    
+    <script>
+        const musicBtn = document.getElementById('musicBtn');
+        const bgMusic = document.getElementById('bgMusic');
+        let isPlaying = false;
+        
+        musicBtn.addEventListener('click', function() {
+            if (isPlaying) {
+                bgMusic.pause();
+                musicBtn.textContent = '♫';
+                musicBtn.classList.remove('playing');
+            } else {
+                bgMusic.play();
+                musicBtn.textContent = '⏸';
+                musicBtn.classList.add('playing');
+            }
+            isPlaying = !isPlaying;
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Outer Wilds - Contato</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Special+Gothic+Expanded+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1><img src="Outer_Wilds_Logo.png" alt="Outer Wilds Logo"></h1>
+    <h2>contato</h2>
+    
+    <div class="contact-form">
+        <form id="contactForm" onsubmit="return validateForm()">
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" placeholder="Seu nome">
+            
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="seu@email.com">
+            
+            <label for="mensagem">Mensagem</label>
+            <textarea id="mensagem" placeholder="Sua mensagem..."></textarea>
+            
+            <button type="submit">Enviar</button>
+        </form>
+        <div id="formMessage" style="color: #FF7D25; margin-top: 1rem; text-align: center;"></div>
+    </div>
+    
+    <div class="footer">
+        <a href="index.html" class="contatos-link">voltar</a>
+    </div>
+    
+    <script>
+        function validateForm() {
+            var nome = document.getElementById('nome').value;
+            var email = document.getElementById('email').value;
+            var mensagem = document.getElementById('mensagem').value;
+            var msg = document.getElementById('formMessage');
+            
+            if (nome === '' || nome.length < 2) {
+                msg.textContent = 'Por favor, digite seu nome (mínimo 2 caracteres!!!)';
+                return false;
+            }
+            
+            if (email === '' || !email.includes('@') || !email.includes('.')) {
+                msg.textContent = 'Por favor, digite um email válido';
+                return false;
+            }
+            
+            if (mensagem === '' || mensagem.length < 10) {
+                msg.textContent = 'Por favor, digite uma mensagem (mínimo 10 caracteres!)';
+                return false;
+            }
+            
+            msg.textContent = '✅ Mensagem enviada com sucesso! (Demo!!!!)';
+            msg.style.color = '#4CAF50';
+            return false; 
+        }
+    </script>
+</body>
+</html>
